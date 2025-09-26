@@ -6,15 +6,17 @@ def check_password_strength():
 
     result = zxcvbn(password)
     
-    if result == 0:
+    score = result['score']
+    
+    if score == 0:
         scr = 'Very Weak'
-    elif result == 1:
+    elif score == 1:
         scr = 'Weak'
-    elif result == 2:
+    elif score == 2:
         scr = 'meduim'
-    elif result == 3:
+    elif score == 3:
         scr = 'Strong'
-    elif result == 4:
+    elif score == 4:
         scr = 'Very Strong'
         
     
