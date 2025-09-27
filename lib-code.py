@@ -4,8 +4,7 @@ import getpass
 def check_password_strength():
     password = getpass.getpass("Enter password: ")
 
-    result = zxcvbn(password)
-    
+    result = zxcvbn(password)   
     score = result['score']
     
     if score == 0:
@@ -19,11 +18,10 @@ def check_password_strength():
     elif score == 4:
         scr = 'Very Strong'
 
-
     print("\n🔒 Password Strength Analysis")
     print("-" * 30)
-    print(f"Your password is {result['score']} {scr}")
-    
+    print(f"Your password is {scr}")
 
 if __name__ == "__main__":
     check_password_strength()
+    
